@@ -1,25 +1,45 @@
-/* Bootstrap entegrasyonu için temel stiller */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.mobile-app {
+  position: relative;
+  max-width: 304px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.jumbotron {
-    background-color: #e9ecef;
-    padding: 2rem;
-    border-radius: 0.3rem;
+.mobile-app::after {
+  content: "";
+  background-image: url(iphonex-black.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.card {
-    margin-bottom: 1rem;
+.mobile-app .app-screen {
+  margin: auto;
+  border-radius: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+}
+
+.navbar {
+  transition: all 0.3s;
 }
