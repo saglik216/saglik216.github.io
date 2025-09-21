@@ -20,7 +20,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
             <a class="nav-link" href="#home">Ana Sayfa</a>
           </li>
@@ -29,6 +29,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#download">İndir</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="nav-link" href="#" id="theme-toggle"><i class="fas fa-moon"></i></a>
           </li>
         </ul>
       </div>
@@ -43,147 +46,74 @@
     </div>
   </header>
 
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6" data-aos="fade-right">
-          <div class="text-slider">
-            <div>
-              <h2>HT Shift'i Keşfedin</h2>
-              <p>HT Shift, yoğun programınızı düzenlemek ve nöbetlerinizi, görevlerinizi zahmetsizce takip etmek için tasarlanmış kapsamlı bir takvim ve görev yönetimi uygulamasıdır. İster sağlık çalışanı, ister güvenlik görevlisi, ister vardiyalı çalışan olun, HT Shift programınızı kontrol altına almanızı sağlar.</p>
-            </div>
-            <div>
-              <h2>Vardiyalarınızı Kolayca Planlayın</h2>
-              <p>HT Shift ile gelecekteki vardiyalarınızı kolayca oluşturabilir, düzenleyebilir ve silebilirsiniz. Takvim üzerinde tam kontrol sizde.</p>
-            </div>
-            <div>
-              <h2>İstatistiklerle Performansınızı İzleyin</h2>
-              <p>Aylık nöbet sayılarınızı ve toplam çalışma saatlerinizi takip ederek, çalışma düzeniniz hakkında değerli bilgiler edinin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <div class="mobile-app">
-            <div>
-              <img src="img/1.jpg" alt="screen1" class="app-screen">
-            </div>
-            <div>
-              <img src="img/2.jpg" alt="screen2" class="app-screen">
-            </div>
-            <div>
-              <img src="img/3.jpg" alt="screen3" class="app-screen">
-            </div>
-            <div>
-              <img src="img/4.jpg" alt="screen4" class="app-screen">
-            </div>
-            <div>
-              <img src="img/5.jpg" alt="screen5" class="app-screen">
-            </div>
-            <div>
-              <img src="img/6.jpg" alt="screen6" class="app-screen">
-            </div>
-            <div>
-              <img src="img/7.jpg" alt="screen7" class="app-screen">
-            </div>
-            <div>
-              <img src="img/8.jpg" alt="screen8" class="app-screen">
-            </div>
-            <div>
-              <img src="img/9.jpg" alt="screen9" class="app-screen">
-            </div>
-            <div>
-              <img src="img/10.jpg" alt="screen10" class="app-screen">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="features" class="bg-light py-5">
     <div class="container">
-      <h2 class="text-center mb-5" data-aos="fade-up">Temel Özellikler</h2>
-      <div class="row">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-calendar-alt fa-3x mb-3"></i>
-              <h5 class="card-title">Sezgisel Takvim ve Ajanda</h5>
-              <p class="card-text">Nöbetlerinizi ve görevlerinizi net ve düzenli bir takvim görünümünde kolayca görüntüleyin.</p>
-            </div>
+      <h2 class="text-center mb-5">Uygulama Özellikleri</h2>
+      <div class="row align-items-center">
+        <!-- Mobile Slider (Source Order: 1st) -->
+        <div class="col-lg-4 my-4 order-lg-2" data-aos="zoom-in">
+          <div class="mobile-app"> 
+            <div><img src="img/1.jpg" alt="screen1" class="app-screen"></div>
+            <div><img src="img/2.jpg" alt="screen2" class="app-screen"></div>
+            <div><img src="img/3.jpg" alt="screen3" class="app-screen"></div>
+            <div><img src="img/4.jpg" alt="screen4" class="app-screen"></div>
+            <div><img src="img/5.jpg" alt="screen5" class="app-screen"></div>
+            <div><img src="img/6.jpg" alt="screen6" class="app-screen"></div>
+            <div><img src="img/7.jpg" alt="screen7" class="app-screen"></div>
+            <div><img src="img/8.jpg" alt="screen8" class="app-screen"></div>
+            <div><img src="img/9.jpg" alt="screen9" class="app-screen"></div>
+            <div><img src="img/10.jpg" alt="screen10" class="app-screen"></div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-tasks fa-3x mb-3"></i>
-              <h5 class="card-title">Kapsamlı Nöbet Yönetimi</h5>
-              <p class="card-text">Tekli veya toplu nöbet ekleme, düzenleme ve silme işlemleriyle programınızı anında güncelleyin.</p>
-            </div>
-          </div>
+        <!-- Left Features (Source Order: 2nd) -->
+        <div class="col-lg-4 order-lg-1" data-aos="fade-right">
+          <ul class="feature-list text-lg-end text-center">
+            <li class="feature-indicator" data-slide-index="0">
+              <h5><i class="fas fa-eye"></i> Genel Bakış</h5>
+              <p>Uygulamaya hızlı bir bakış.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="1">
+              <h5><i class="fas fa-calendar-alt"></i> Sezgisel Takvim</h5>
+              <p>Nöbetlerinizi net bir takvimde görüntüleyin.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="2">
+              <h5><i class="fas fa-tasks"></i> Nöbet Yönetimi</h5>
+              <p>Nöbet ekleyin, düzenleyin ve silin.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="3">
+              <h5><i class="fas fa-edit"></i> Özelleştirme</h5>
+              <p>Kendi vardiya tiplerinizi oluşturun.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="4">
+              <h5><i class="fas fa-language"></i> Çoklu Dil Desteği</h5>
+              <p>Uygulamayı tercih ettiğiniz dilde kullanın.</p>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-edit fa-3x mb-3"></i>
-              <h5 class="card-title">Özelleştirilebilir Vardiya Tipleri</h5>
-              <p class="card-text">Kendi vardiya tiplerinizi (örneğin, Gündüz, Gece, İzin) renk, isim ve saat aralıklarıyla kişiselleştirin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-bell fa-3x mb-3"></i>
-              <h5 class="card-title">Akıllı Alarm Hatırlatıcıları</h5>
-              <p class="card-text">Önemli nöbetleri asla kaçırmayın! Vardiya başlangıcından önce ayarlanabilir alarmlarla zamanında bildirim alın. Hangi vardiya tipleri için alarm kurulacağını seçin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-chart-bar fa-3x mb-3"></i>
-              <h5 class="card-title">Detaylı İstatistikler</h5>
-              <p class="card-text">Aylık nöbet sayılarınızı ve toplam çalışma saatlerinizi vardiya tiplerine göre görüntüleyerek programınız hakkında değerli bilgiler edinin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-file-pdf fa-3x mb-3"></i>
-              <h5 class="card-title">PDF Dışa Aktarma</h5>
-              <p class="card-text">Takvim ve nöbet bilgilerinizi kolayca PDF olarak dışa aktarın. Raporlarınızı özelleştirin ve paylaşın.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-language fa-3x mb-3"></i>
-              <h5 class="card-title">Çoklu Dil Desteği</h5>
-              <p class="card-text">Uygulamayı tercih ettiğiniz dilde kullanın.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-moon fa-3x mb-3"></i>
-              <h5 class="card-title">Karanlık Mod Desteği</h5>
-              <p class="card-text">Göz yorgunluğunu azaltmak ve pil ömründen tasarruf etmek için karanlık modu etkinleştirin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <i class="fas fa-user-friends fa-3x mb-3"></i>
-              <h5 class="card-title">Kullanıcı Dostu Arayüz</h5>
-              <p class="card-text">Basit ve anlaşılır tasarımı sayesinde uygulamayı kolayca kullanmaya başlayın.</p>
-            </div>
-          </div>
+        <!-- Right Features (Source Order: 3rd) -->
+        <div class="col-lg-4 order-lg-3" data-aos="fade-left">
+          <ul class="feature-list text-lg-start text-center">
+            <li class="feature-indicator" data-slide-index="5">
+              <h5><i class="fas fa-moon"></i> Karanlık Mod</h5>
+              <p>Göz yorgunluğunu azaltın.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="6">
+              <h5><i class="fas fa-bell"></i> Akıllı Alarmlar</h5>
+              <p>Vardiyalardan önce bildirim alın.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="7">
+              <h5><i class="fas fa-chart-bar"></i> İstatistikler</h5>
+              <p>Çalışma düzeninizi takip edin.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="8">
+              <h5><i class="fas fa-file-pdf"></i> PDF Dışa Aktarma</h5>
+              <p>Raporlarınızı kolayca paylaşın.</p>
+            </li>
+            <li class="feature-indicator" data-slide-index="9">
+              <h5><i class="fas fa-user-friends"></i> Kullanıcı Dostu Arayüz</h5>
+              <p>Kolayca kullanmaya başlayın.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

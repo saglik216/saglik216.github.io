@@ -1,8 +1,12 @@
+/* Base Body Style */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 
+/* Mobile App Slider Frame */
 .mobile-app {
   position: relative;
   max-width: 304px;
@@ -23,6 +27,7 @@ body {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1;
 }
 
 .mobile-app .app-screen {
@@ -33,6 +38,7 @@ body {
   padding: 13px 16px;
 }
 
+/* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 25px;
@@ -40,6 +46,72 @@ body {
   display: none;
 }
 
+/* Navbar Transition */
 .navbar {
   transition: all 0.3s;
+}
+
+/* Feature Indicator Styles */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-indicator {
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+}
+
+.feature-indicator:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
+
+.feature-indicator.active {
+  background-color: #fff;
+  border-color: #0d6efd;
+  transform: scale(1.05);
+}
+
+.feature-indicator.active h5 {
+  color: #0d6efd;
+}
+
+.feature-indicator h5 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.feature-indicator p {
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+/* Dark Theme Overrides */
+[data-bs-theme="dark"] .feature-indicator:hover {
+  background-color: #2c2c2c;
+}
+
+[data-bs-theme="dark"] .feature-indicator.active {
+  background-color: #343a40;
+  border-color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .feature-indicator p {
+ color: #adb5bd;
+}
+
+[data-bs-theme="dark"] body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: var(--bs-tertiary-bg) !important;
 }

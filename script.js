@@ -1,18 +1,83 @@
 $(document).ready(function(){
-  $(".mobile-app").slick({
+
+  // --- THEME SWITCHER LOGIC ---
+  const themeToggle = document.querySelector('#theme-toggle');
+  const htmlEl = document.documentElement;
+
+  const getTheme = () => {
+    const theme = localStorage.getItem('theme');
+    if (theme) return theme;
+
+    // If no preference, check OS preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  const setTheme = (theme) => {
+    localStorage.setItem('theme', theme);
+    htmlEl.setAttribute('data-bs-theme', theme);
+
+    // Update icon
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+  }
+
+  // Initial theme set
+  const initialTheme = getTheme();
+  setTheme(initialTheme);
+
+  themeToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentTheme = htmlEl.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  });
+
+  // Listen for OS theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const newTheme = e.matches ? "dark" : "light";
+    setTheme(newTheme);
+  });
+
+
+  // --- SLIDER LOGIC ---
+  var mobileSlider = $(".mobile-app");
+  mobileSlider.slick({
     autoplay: true,
     fade: true,
     dots: false,
     arrows: false
   });
 
-  $(".text-slider").slick({
-    autoplay: true,
-    fade: true,
-    dots: false,
-    arrows: false
+  function updateActiveFeature(index) {
+    $('.feature-indicator').removeClass('active');
+    $('.feature-indicator[data-slide-index="' + index + '"]').addClass('active');
+  }
+
+  updateActiveFeature(0);
+
+  $('.feature-indicator').on('click', function() {
+    var slideIndex = $(this).data('slide-index');
+    mobileSlider.slick('slickGoTo', slideIndex);
+
+    if ($(window).width() < 992) {
+      $('html, body').animate({
+        scrollTop: mobileSlider.offset().top - 70
+      }, 400);
+    }
   });
 
+  mobileSlider.on('afterChange', function(event, slick, currentSlide){
+    updateActiveFeature(currentSlide);
+  });
+
+
+  // --- SCROLL FUNCTIONS ---
   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
       $('#back-to-top').fadeIn();
@@ -21,7 +86,6 @@ $(document).ready(function(){
     }
   });
 
-  // scroll body to 0px on click
   $('#back-to-top').click(function () {
     $('body,html').animate({
       scrollTop: 0
@@ -29,38 +93,16 @@ $(document).ready(function(){
     return false;
   });
 
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
+  $("a[href*='#']:not([href='#']) ").on('click', function(event) {
+    if (this.hash !== "" && this.pathname === location.pathname) {
       event.preventDefault();
-
-      // Store hash
       var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 800, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
-    } // End if
+    }
   });
 
-  $(window).scroll(function() {
-    var scrollDistance = $(window).scrollTop();
-
-    // Assign active class to nav links while scrolling
-    $('.py-5, .bg-light').each(function(i) {
-      if ($(this).position().top <= scrollDistance) {
-        $('.navbar-nav a.active').removeClass('active');
-        $('.navbar-nav a').eq(i).addClass('active');
-      }
-    });
-  }).scroll();
 });
